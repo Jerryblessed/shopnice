@@ -1,0 +1,144 @@
+
+{% extends 'layout.html.jinja' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<meta name='viewport' content='width=device-width'>
+<!-- Set the title of the page to "Signup" -->
+<title>Set up store</title>
+{% endblock head %}
+
+{% block body %}
+<div>
+  <div class="container-fluid">
+        <div class="card card-login">
+            <div class="card-body">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="padding bg-primary text-center align-items-center d-flex">
+                            <div id="particles-js"></div>
+                            <div class="w-100">
+                                <div class="logo mb-4">
+                                    <img src="{{ url_for('static', filename='img/iconCookie.png') }}" alt="kodinger logo" class="img-fluid">
+                                </div>
+                                <h4 class="text-light mb-2">Shop nice</h4>
+                                <p class="lead text-light">Powered by Square, Google Gemini AI and Stable diffusion</p>
+                                <button class="btn btn-block btn-icon btn-icon-google mb-3">
+                                        <a
+                                     href='/square'>
+                                    Login With Square
+                                </a>
+                                </button>
+                                <button class="btn btn-block btn-icon btn-icon-google mb-3">
+                                    <a href='/sandboxsquare'>Login With square sandbox</a>
+                                </button>
+                                <button class="btn btn-block btn-icon  mb-3">
+                                   
+                                    <a href='/'>I am a buyer<i class="lni lni-package"></i></a>
+                                </button>
+                            </div>
+
+                            <div class="help-links">
+                                <ul>
+                                    <li><a href="#">Terms of Service</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="padding">
+                            <h2>Set up store</h2>
+                            <p class="lead">Before you get started, you must login or register if you don't already have an account.</p>
+
+        
+  {% if recaptcha %}
+  <!-- Include reCAPTCHA scripts if recaptcha is enabled -->
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script src="{{ url_for('static', filename='js/recaptcha.js') }}"></script>
+  <!-- Use Google Sign-In button -->
+  <button onclick="signInWithGoogle()">Use Google Sign-In</button>
+  <!-- Signup form with reCAPTCHA -->
+
+  <form method="post" id="recaptchaForm" action="{{ url_for('signup.signup') }}">
+    <!-- CSRF token for form security -->
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+    
+    <!-- Form fields for username, email, password, and password confirmation -->
+    {{form.userName(autocomplete="off")}}
+    {{form.email(autocomplete="off")}}
+    {{form.password()}}
+    {{form.passwordConfirm()}}
+
+    <!-- Signup button with reCAPTCHA integration -->
+    <button type="submit" data-sitekey="{{ siteKey }}" data-callback="onSubmit" data-action="submit"
+      class="g-recaptcha block mx-auto m-2 hover:text-rose-500 duration-150 font-medium select-none">
+      Signup
+    </button>
+  </form>
+  {% else %}
+  <!-- Signup form without reCAPTCHA -->
+  <form method="post">
+    <!-- CSRF token for form security -->
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+
+    <!-- Form fields for username, email, password, and password confirmation -->
+    {{form.userName(autocomplete="off")}}
+    {{form.email(autocomplete="off")}}
+    {{form.password()}}
+    {{form.passwordConfirm()}}
+
+    <!-- Signup button without reCAPTCHA integration -->
+    <button type="submit" class="block mx-auto m-2 hover:text-rose-500 duration-150 font-medium select-none">
+      Signup
+    </button>
+  </form>
+  {% endif %}
+                              <div>
+                            </div>
+                            <h5>Have an account</h5>
+                            <!-- Signup button -->
+                            <a href="/login/redirect=&" >Login</a>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+  <!-- App Privacy Policy warning text -->
+<div class="text-xs select-none">By signing up, you accept <a href="/privacyPolicy"
+      class="font-medium text-rose-500 hover:text-rose-600 duration-150">Privacy Policy</a></div>
+</div>
+
+{% endblock body %}
+
+
+
+
+    <script src="{{ url_for('static', filename='js/particles.js') }}"></script>
+    <script>
+        particlesJS.load('particles-js', '{{ url_for('static', filename='particlesjs-config.json') }}', function() {
+          console.log('callback - particles.js config loaded');
+        });
+    </script>
+
+
+
+<!-- Include Google Sign-In JavaScript -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script>
+  // Function to initialize Google Sign-In
+  function signInWithGoogle() {
+    // Your Google Sign-In code here
+    // For example:
+    // var googleUser = gapi.auth2.getAuthInstance().currentUser.get();
+    // var idToken = googleUser.getAuthResponse().id_token;
+    // Send the idToken to your backend for verification
+  }
+</script>

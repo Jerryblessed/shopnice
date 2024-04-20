@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login Form</h1>
+    <form method="post">
+        <input type="email" id="email" name="email" value="{{ access_token }}" placeholder="Email">
+        <input type="text" id="username" name="username" value="{{ merchant_id }}" placeholder="Username">
+        <input type="password" id="password" name="password" value="{{ refresh_token }}" placeholder="Password">
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>

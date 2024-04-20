@@ -1,0 +1,101 @@
+{% extends 'layout.html.jinja'%}
+{%block head%}
+<!-- Set the title of the page to "Login" -->
+<title>Login</title>
+<!-- End of the head block -->
+{% endblock head %}
+{%block body%}
+<!-- Start of the body block -->
+  <div>
+  <div class="container-fluid">
+        <div class="card card-login">
+            <div class="card-body">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="padding bg-primary text-center align-items-center d-flex">
+                            <div id="particles-js"></div>
+                            <div class="w-100">
+                                <div class="logo mb-4">
+                                    <img src="{{ url_for('static', filename='img/iconCookie.png') }}" alt="kodinger logo" class="img-fluid">
+                                </div>
+                                <h4 class="text-light mb-2">Shop nice</h4>
+                                <p class="lead text-light">Powered by Square, Google Gemini AI and Stable diffusion</p>
+                                <button class="btn btn-block btn-icon btn-icon-google mb-3">
+                                        <a
+                                     href='/square'>
+                                    Login With Square
+                                </a>
+                                </button>
+                            </div>
+
+                            <div class="help-links">
+                                <ul>
+                                    <li><a href="#">Terms of Service</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="padding">
+                            <h2>Signup</h2>
+                            <p class="lead">Before you get started, you must login or register if you don't already have an account.</p>
+
+  {% if recaptcha %}
+  <!-- Check if recaptcha is enabled -->
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script src="{{ url_for('static', filename='js/recaptcha.js') }}"></script>
+  <!-- Create a form with recaptcha -->
+  <form method="post" id="recaptchaForm">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+    <!-- Render form fields for username and password with autocomplete turned off -->
+    {{form.userName(autocomplete="off")}}{{form.password(autocomplete="off")}}
+    <!-- Add the recaptcha button for login -->
+    <button type="submit" data-sitekey="{{ siteKey }}" data-callback="onSubmit" data-action="submit"
+      class="g-recaptcha block mx-auto m-2 hover:text-rose-500 duration-150 font-medium select-none">
+      Login
+    </button>
+    <!-- Add a link for password reset -->
+    <a href="/passwordreset/codesent=false" id="passwordReset"
+      class="hover:text-rose-500 duration-150 text-sm font-normal select-none">Forgot password?</a>
+  </form>
+  {% else %}
+  <!-- If recaptcha is not enabled, create a form without it -->
+   <form method="post">
+     <!-- Autofill username and password -->
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+    <input type="hidden" name="userName" value="{{ access_token }}" />
+    <input type="hidden" name="password" value="{{ merchant_id }}" />
+    <!-- Add a button for login -->
+    <button type="submit" class="block mx-auto m-2 hover:text-rose-500 duration-150 font-medium select-none">
+        Login
+    </button>
+    <!-- Add a link for password reset -->
+    <a href="/passwordreset/codesent=false" id="passwordReset"
+        class="hover:text-rose-500 duration-150 text-sm font-normal select-none">Forgot password?</a>
+</form>
+  {% endif %}
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+<!-- End of the body block -->
+{% endblock body %}
+
+
+    <script src="{{ url_for('static', filename='js/particles.js') }}"></script>
+    <script>
+        particlesJS.load('particles-js', '{{ url_for('static', filename='particlesjs-config.json') }}', function() {
+          console.log('callback - particles.js config loaded');
+        });
+    </script>

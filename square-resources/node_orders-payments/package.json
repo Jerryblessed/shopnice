@@ -1,0 +1,27 @@
+{
+  "name": "order-ahead-sample-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": " nodemon -e js,pug ./bin/www",
+    "test": "NODE_ENV=sandbox nodemon -e js,pug ./bin/www",
+    "seed": "node ./bin/script/seed-catalog.js generate",
+    "clear": " node ./bin/script/seed-catalog.js clear",
+    "help": " node ./bin/script/seed-catalog.js --help"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "cookie-parser": "*",
+    "debug": "*",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.1.0",
+    "express": "*",
+    "morgan": "*",
+    "pug": "^3.0.2",
+    "serve-favicon": "*",
+    "square": "^25.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
