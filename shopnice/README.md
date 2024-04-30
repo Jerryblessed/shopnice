@@ -1,7 +1,7 @@
 ###### <sub> This project needs a ⭐️ from you. Don't forget to leave a star ⭐️. <sub/>
 
 
-# [FlaskBlog](https://dogukanurker.com/flaskblog)
+# [Shopnice](https://jerryblessed.pythonanywhere.com/register)
 
 **English** | [Türkçe](docs/readme_tr.md) | [Russian](docs/readme_ru.md)
 
