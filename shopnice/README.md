@@ -1,18 +1,16 @@
 ###### <sub> This project needs a ⭐️ from you. Don't forget to leave a star ⭐️. <sub/>
 
-![appLight](/images/Light.png)
 
 # [FlaskBlog](https://dogukanurker.com/flaskblog)
 
 **English** | [Türkçe](docs/readme_tr.md) | [Russian](docs/readme_ru.md)
 
-📜 **Simple blog app built with Flask.**
+📜 **Simple eCommerce app built with Flask.**
 
-[📧 Contact](mailto:dogukanurker@icloud.com)<br/>
-[👨🏻‍💻 Dogukan Urker](https://dogukanurker.com)
+[📧 Contact](mailto:opejeremiah@gmail.com)<br/>
+[👨🏻‍💻 Shop nice](http://jerryblessed.pythonanywhere.com/)
 
-[📸 Images](https://github.com/DogukanUrker/flaskBlog/tree/master/images)<br/>
-[📽️ Preview Video](https://youtu.be/WyIpAlSp2RM)<br/>
+[📽️ Preview Video](https://youtu.be/D1QV339a6sE)<br/>
 
 [🆕 Changelog V2](docs/version2Changelog.md)
 
@@ -41,6 +39,13 @@
 ## 💫 Features
 
 - Admin Panel
+- square Ouath
+- square payment
+- square invoice
+- square appointment
+- square subscription
+- square gift card
+- Google gemini
 - Comment
   - Comment Delete
 - Custom Profile Picture
@@ -48,7 +53,6 @@
 - Dark/Light Themes
 - Database Checker
 - Debug Messages
-- Docker
 - Google reCAPTCHA v3
 - Logging
 - Password
@@ -80,12 +84,18 @@
 
 ## 📦 Requirements
 
-- Flask
-- Passlib
-- WTForms
-- Requests
-- Flask-WTF
-- Playwright
+- Flask==3.0.2
+- flask_wtf==1.2.1
+- passlib==1.7.4
+- playwright==1.41.2
+- Requests==2.31.0
+- pipenv==2023.12.1
+- WTForms==3.1.2
+- squareup==33.0.0.20231115
+- python-dotenv
+- fastapi
+- uvicorn
+- aiofiles
 - Pipenv
 - Python 3.10 or newer
 
@@ -107,6 +117,19 @@
 - Flask_WTF
 - Requests
 - Playwright
+- Flask==3.0.2
+- flask_wtf==1.2.1
+- passlib==1.7.4
+- playwright==1.41.2
+- Requests==2.31.0
+- pipenv==2023.12.1
+- WTForms==3.1.2
+- squareup==33.0.0.20231115
+- python-dotenv
+- fastapi
+- uvicorn
+- aiofiles
+
 
 ### 🔮 Frontend
 
@@ -144,67 +167,3 @@ Username: admin
 
 Password: admin
 
-## 🎨 Figma Design Files
-
-- App
-  - [Desktop](https://www.figma.com/file/9HFi36JmzdZbzbjEPio6Om/Flask-Blog-Desktop?type=design&mode=design&t=CuzOm3gLIgfOF0it-1)
-  - [Mobile](https://www.figma.com/file/qkgrIl15bdTsra6BNSVdAN/Flask-Blog-Mobile?type=design&mode=design&t=CuzOm3gLIgfOF0it-1)
-- [Terminal](https://www.figma.com/file/FWusS9JrbtEIhCX6Dv7efj/Flask-Blog-Terminal?type=design&mode=design&t=CuzOm3gLIgfOF0it-1)
-- [Mails](https://www.figma.com/file/6Glzzq1GWIdbZ7xoVOaEEy/Flask-Blog-Mail?type=design&mode=design&t=CuzOm3gLIgfOF0it-1)
-
-[Files in \*.fig format](https://drive.google.com/drive/folders/12lchfmCCkCRzHTQfHk1gDEY10wz7qhxs?usp=drive_link)
-
-## 🧠 What I Learned
-
-FlaskBlog has been an enriching journey, marking a significant milestone in my development career. Through its creation, I delved deep into various facets of web development and programming, expanding my skill set and understanding. Here's an elaboration on some of the key learnings:
-
-### 🔥 New Technologies Explored
-
-- Docker: Embracing containerization streamlined deployment and enhanced scalability.
-- Playwright: Automating browser interactions empowered smoother testing and validation processes.
-- Summer Note Editor: Integrating this versatile editor facilitated a richer content creation experience.
-- Tabler Icons: Leveraging these icons added visual appeal and improved user experience.
-- Google reCAPTCHA v3: Implementing advanced security measures fortified the application against bots and malicious activities.
-- Figma: Utilizing Figma for design provided insights into collaborative design processes and enhanced UI/UX planning.
-- Time Zone Awareness Design: Incorporating time zone awareness ensured a seamless experience for users across different geographical locations.
-- Secure SQL Connections: Implementing secure SQL connections bolstered data integrity and confidentiality.
-
-### 💪🏻 Enhanced Proficiency in
-
-- Python: Mastery over Python deepened, enabling more efficient and robust backend development.
-- JavaScript: Strengthening JavaScript skills facilitated dynamic frontend interactions and enhanced user engagement.
-- TailwindCSS: Proficiency in TailwindCSS led to more streamlined and maintainable CSS code, accelerating frontend development.
-- CSS: Further exploration of CSS enhanced styling capabilities, enabling finer control over the application's visual presentation.
-- WTForms: Deeper understanding and utilization of WTForms facilitated seamless form handling and validation.
-- SQLite3: Familiarity with SQLite3 improved database management and optimization strategies.
-- Jinja: Mastery over Jinja templating engine facilitated more dynamic and efficient content rendering.
-
-Embarking on the FlaskBlog project has been immensely rewarding, not only in terms of skill enhancement but also in personal fulfillment. As a full-stack developer, this endeavor has honed my abilities and deepened my passion for crafting elegant, functional solutions. I take pride in the outcome of this project and sincerely hope it resonates with you as well. 😊
-
-## 🫂 Contributors
-
-<a href="https://github.com/dogukanurker"><img src="https://avatars.githubusercontent.com/u/62756402" title="dogukanurker" width="80" height="80"></a>
-<a href="https://github.com/adindrabkin"><img src="https://avatars.githubusercontent.com/u/47116975" title="adindrabkin" width="80" height="80"></a>
-<a href="https://github.com/codehwang"><img src="https://avatars.githubusercontent.com/u/26578588" title="codehwang" width="80" height="80"></a>
-<a href="https://github.com/dkashkarev"><img src="https://avatars.githubusercontent.com/u/67013355" title="dkashkarev" width="80" height="80"></a>
-<a href="https://github.com/dkashkarev"><img src="https://avatars.githubusercontent.com/u/2644169" title="barmar" width="80" height="80"></a>
-
-## ✨ Stars
-
-[![Stargazers for @DogukanUrker/flaskBlog](http://bytecrank.com/nastyox/reporoster/php/stargazersSVG.php?theme=dark&user=DogukanUrker&repo=flaskBlog)](https://github.com/DogukanUrker/flaskBlog/stargazers)
-
-## 🍴 Forks
-
-[![Forkers for @DogukanUrker/flaskBlog](http://bytecrank.com/nastyox/reporoster/php/forkersSVG.php?theme=dark&user=DogukanUrker&repo=flaskBlog)](https://github.com/DogukanUrker/flaskBlog/network/members)
-
-## 💰 Support
-
-<a href="https://dogukanurker.com/donate" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/arial-red.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-
-## ⭐ Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=dogukanurker/flaskblog&type=Date)](https://star-history.com/#dogukanurker/flaskblog&Date)
-
-## ⚠️ Warning
-
-The sample data was created using AI(ChatGPT 3.5 and Microsoft Copilot) which means that some sample data may contain incorrect information.
