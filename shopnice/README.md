@@ -44,6 +44,7 @@
 - square invoice
 - square appointment
 - square subscription
+- square booking
 - square gift card
 - Google gemini
 - Comment
